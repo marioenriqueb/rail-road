@@ -9,16 +9,11 @@ public class Application {
 
     private static final String[] nodes = {"AB5", "BC4", "CD8", "DC8", "DE6", "AD5", "CE2", "EB3", "AE7"};
 
-
-    private static Integer[][] graph = new Integer[5][5];
-
     public static void main(String[] args) {
         // A = 0, B = 1, C = 2, D = 3, E = 4
         Graph graph = new Graph(5, 5);
 
-        Arrays.stream(nodes).parallel().forEach(node -> {
-            graph.setWeight(node);
-        });
+        Arrays.stream(nodes).parallel().forEach(node -> graph.setWeight(node));
 
         System.out.println("Output #1: " + graph.getWeight("A-B-C"));
         System.out.println("Output #2: " + graph.getWeight("A-D"));

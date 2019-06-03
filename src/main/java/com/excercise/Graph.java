@@ -30,8 +30,7 @@ public class Graph {
         for (int index = 0; index < values.length - 1; index++) {
             Node from = Node.byValue(values[index]);
             Node to = Node.byValue(values[index + 1]);
-            if (from != null && to != null &&
-                    this.graph[from.index()][to.index()] != null) {
+            if (from != null && to != null && this.graph[from.index()][to.index()] != null) {
                 counter += this.graph[from.index()][to.index()];
             } else {
                 return "NO SUCH ROUTE";
